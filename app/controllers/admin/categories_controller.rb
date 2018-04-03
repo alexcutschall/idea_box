@@ -1,8 +1,14 @@
-class Admin::CategoriesController < ApplicationController
-  before_action :require_admin
+class Admin::CategoriesController < Admin::BaseController
 
   def index
     @categories = Category.all
+  end
+
+  def create
+    if current_admin?
+      @category = Category.create(category_params)
+      redirect_to admin_categories_path
+    end
   end
 
   def new
@@ -15,7 +21,8 @@ class Admin::CategoriesController < ApplicationController
   end
 
   private
-  def require_admin
-    render file: "/public/404" unless current_admin?
+
+  def category_params
+    params.require(:category).permit(:title)
   end
 end

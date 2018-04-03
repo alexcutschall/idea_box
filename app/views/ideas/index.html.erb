@@ -1,0 +1,5 @@
+<% @ideas.each do |idea| %>
+  Category: <%= idea.category.title %><br/>
+  Title: <%= idea.title %><br/>
+  Description: <%= idea.body %><br/>
+<% end %>

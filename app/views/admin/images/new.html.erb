@@ -1,0 +1,6 @@
+<%= form_for [:admin, @image] do |f| %>
+  <%= f.label :url %><br />
+  <%= f.url_field :url %>
+
+  <%= f.submit %>
+<% end %>

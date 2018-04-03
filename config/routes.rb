@@ -6,9 +6,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :categories
+    resources :images
   end
 
-  resources :categories, only: [:create]
   resources :users, only: [:new, :create, :show] do
     resources :ideas
   end
