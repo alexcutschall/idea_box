@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :categories, only: [:create]
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: [:new, :create, :show] do
+    resources :ideas
+  end
 end

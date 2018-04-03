@@ -1,7 +1,9 @@
 class CategoriesController < ApplicationController
   def create
-    @category = Category.create(category_params)
-    redirect_to admin_categories_path
+    if current_admin?
+      @category = Category.create(category_params)
+      redirect_to admin_categories_path
+    end
   end
 
   private

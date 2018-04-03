@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Authentication" do
-  scenario "allows a user to sign it" do
+  scenario "allows a user to sign in" do
     visit '/'
 
     click_on "Sign Up!"
