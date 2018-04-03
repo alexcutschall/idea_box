@@ -1,0 +1,9 @@
+<h1>Welcome, <%= current_user.username %>!</h1><br>
+
+<% if current_user.admin? %>
+  <%= link_to "All Categories", admin_categories_path %>
+  <%= link_to "Create a new Image", new_admin_image_path(current_user) %>
+<% end %>
+
+<%= link_to "Create a New Idea", new_user_idea_path(current_user) %>
+<%= link_to "Log Out", login_path  %>

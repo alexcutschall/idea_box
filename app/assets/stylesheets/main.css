@@ -1,0 +1,39 @@
+body {
+  font-family: 'Chicle', cursive;
+  color: white;
+  background-color: grey;
+  background-image: url(https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.coda-craven.org%2Fwp-content%2Fuploads%2F2016%2F09%2F2117058761-mountains-rock-climbing-JyEv-JyEv-1920x1080-MM-100.jpg&f=1);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.ghost-button {
+  display: inline-block;
+  width: 200px;
+  padding: 8px;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  transition: background-color 0.2s ease-out,
+              color 0.2s ease-out;
+}
+
+.ghost-button:hover,
+.ghost-button:active {
+  background-color: #fff;
+  color: #000;
+  transition: background-color 0.3s ease-in,
+              color 0.3s ease-in;
+}
