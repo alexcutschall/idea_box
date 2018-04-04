@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if session[:user_id] == params[:id].to_i
+    if current_user.id == params[:id].to_i
       @user = User.find(params[:id])
     else
       render :wrong_user

@@ -1,6 +1,9 @@
 <% @ideas.each do |idea| %>
-  Category: <%= idea.category.title %><br/>
-  Title: <%= idea.title %><br/>
-  Description: <%= idea.body %><br/>
-  <%= link_to "Edit Idea", edit_user_idea %>
+  <tr class="ideas_<%= idea.id %>">
+    Category: <%= idea.category.title %><br/>
+    Title: <%= idea.title %><br/>
+    Description: <%= idea.body %><br/>
+    <%= link_to "Edit Idea", edit_user_idea_path(idea.user, idea) %>
+    <%= link_to "Delete Idea", user_idea_path(idea.user, idea), method: "delete", data: {confirm: "Are you sure you want to delete this idea?"} %>
+  </div>
 <% end %>
