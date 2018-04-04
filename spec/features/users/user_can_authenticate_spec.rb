@@ -33,8 +33,11 @@ describe "Authentication" do
     user2 = User.create(username: "Ricky", password: "awesomedude2")
     visit '/'
     click_on "Log In"
-
+    fill_in "username", with: user.username
+    fill_in "password", with: user.password
+    click_on "Log In"
     visit "/users/#{user2.id}"
+
     expect(page).to have_content("Sorry, You're not authorized to view this page!")
   end
 end

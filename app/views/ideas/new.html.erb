@@ -1,12 +1,1 @@
-<%= form_for [@user, @idea] do |f| %>
- <%= f.label :category %>
- <%= f.collection_select :category_id, Category.all, :id, :title %>
-
- <%= f.label :title %>
- <%= f.text_field :title %>
-
- <%= f.label :body %>
- <%= f.text_field :body %>
-
- <%= f.submit %>
-<% end %>
+<%= render "ideas/form" %>
