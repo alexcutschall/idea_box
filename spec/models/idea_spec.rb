@@ -28,5 +28,11 @@ describe Idea do
 
       expect(idea).to respond_to(:user)
     end
+    it "has many images" do
+      category = Category.create(title: "Gear")
+      idea = Idea.new(category_id: category.id, title: "Sweet gear")
+
+      expect(idea).to respond_to(:images)
+    end
   end
 end

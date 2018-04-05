@@ -1,0 +1,7 @@
+Category: <%= @idea.category.title %><br>
+Title: <%= @idea.title %><br>
+Description: <%= @idea.body %><br>
+<% @idea.images.each do |image| %>
+  <%= image.title %>
+  <%= image_tag image.url %>
+<% end %>

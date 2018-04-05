@@ -1,12 +1,17 @@
-<%= form_for [@user, @idea] do |f| %>
- <%= f.label :category %>
- <%= f.collection_select :category_id, Category.all, :id, :title %>
+<div class="new-idea">
+  <%= form_for [@user, @idea] do |f| %>
+   <%= f.label :category %>
+   <%= f.collection_select :category_id, Category.all, :id, :title %>
 
- <%= f.label :title %>
- <%= f.text_field :title %>
+    <%= f.label :image %>
+    <%= f.collection_select :id, Image.all, :id, :title %>
 
- <%= f.label :body %>
- <%= f.text_field :body %>
+   <%= f.label :title %>
+   <%= f.text_field :title %>
 
- <%= f.submit %>
-<% end %>
+   <%= f.label :body %>
+   <%= f.text_field :body %>
+
+   <%= f.submit %>
+  <% end %>
+</div>

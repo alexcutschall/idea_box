@@ -1,0 +1,5 @@
+<%= form_for [@idea, @image] do |f| %>
+  <%= f.label :image %>
+  <%= f.collection_select :id, Image.all, :id, :title %>
+  <%= f.submit %>
+<% end %>

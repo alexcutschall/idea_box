@@ -24,6 +24,11 @@ class IdeasController < ApplicationController
     @idea = Idea.find(params[:id])
   end
 
+  def show
+    @idea = Idea.find(params[:id])
+    @image = Image.new
+  end
+
   def update
     @idea = Idea.find(params[:id])
     @idea.update(idea_params)
