@@ -1,7 +1,8 @@
 <h1>Admin Categories</h1>
+<%= link_to "New Category", new_admin_category_path %><br>
+<br>
 <% @categories.each do |category| %>
-  <%= category.title %>
+  <%= category.title %><br>
   <%= link_to "Delete", admin_category_path(category), method: "delete", data: {confirm: "Are you sure you want to delete this category?"} %>
+  <br><br>
 <% end %>
-
-<%= link_to "New Category", new_admin_category_path %>

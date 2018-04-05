@@ -9,7 +9,7 @@ describe "User deletes an idea" do
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     visit user_ideas_path(user)
-
+    
     within(".ideas_#{idea.id}") do
       click_on "Delete Idea"
     end

@@ -1,9 +1,18 @@
-<% @ideas.each do |idea| %>
-  <tr class="ideas_<%= idea.id %>">
-    Category: <%= idea.category.title %><br/>
-    Title: <%= idea.title %><br/>
-    Description: <%= idea.body %><br/>
-    <%= link_to "Edit Idea", edit_user_idea_path(idea.user, idea) %>
-    <%= link_to "Delete Idea", user_idea_path(idea.user, idea), method: "delete", data: {confirm: "Are you sure you want to delete this idea?"} %>
-  </div>
-<% end %>
+<div class="idea-header">
+  <h1>Ideas</h1>
+  <%= link_to "Create a New Idea", new_user_idea_path(current_user) %>
+</div>
+<div class="idea-gallery">
+  <% @ideas.each do |idea| %>
+  <div class="image-box ideas_<%= idea.id %>">
+      Category: <%= idea.category.title %><br/>
+      Title: <%= link_to idea.title, user_idea_path(idea.user, idea) %><br/>
+      Description: <%= idea.body %><br/>
+      <% idea.images.each do |image| %>
+        <%= image_tag image.url %>
+      <% end %>
+      <%= link_to "Edit Idea", edit_user_idea_path(idea.user, idea) %><br>
+      <%= link_to "Delete Idea", user_idea_path(idea.user, idea), method: "delete", data: {confirm: "Are you sure you want to delete this idea?"} %>
+    </div>
+  <% end %>
+</div>

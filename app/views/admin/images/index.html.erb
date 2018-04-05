@@ -1,7 +1,7 @@
 <h1>Images</h1>
 <%= link_to "Create a New Image", new_admin_image_path %>
-<p>
+<div class="image-gallery">
   <% @images.each do |image| %>
-      <%= image_tag(image.url, :size => "260x180") %>
+      <%= image_tag(image.url, :size => "200x200") %>
   <% end %>
-</p>
+</div>
